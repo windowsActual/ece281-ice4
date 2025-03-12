@@ -80,18 +80,18 @@ begin
 	-- CONCURRENT STATEMENTS ----------------------------
 	-- Next state logic
 	
-	f_Q_next(00) <= not f_Q(01) and i_C;
+	f_Q_next(0) <= not f_Q(1) and i_C;
 	
-	f_Q_next(01) <= not f_Q(01) and f_Q(00) and not i_C;
+	f_Q_next(1) <= not f_Q(1) and f_Q(0) and not i_C;
 	
 	
 	-- Output logic
 	
-	o_R <= not f_Q(01) and f_Q(00);
+	o_G <= not f_Q(1) and f_Q(0);
 	
-	o_Y <= f_Q(01) and not f_Q(00);
+	o_Y <= f_Q(1) and not f_Q(0);
 	
-	o_G <= (not f_Q(01) and not f_Q(00)) or (f_Q(01) and f_Q(00));
+	o_R <= (not f_Q(1) and not f_Q(0)) or (f_Q(1) and f_Q(0));
 	
 	-------------------------------------------------------	
 	
